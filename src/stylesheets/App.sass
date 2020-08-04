@@ -1,0 +1,114 @@
+$dark-blue: hsl(240, 38%, 20%)
+$grayish-blue: hsl(240, 18%, 77%)
+
+* 
+    box-sizing: border-box
+    font-family: Inter, sans-serif
+    padding: 0
+    margin: 0
+
+#root 
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    background-image: url('../images/pattern-curve.svg')
+    background-repeat: no-repeat
+    background-size: 74%
+    background-position: bottom 0px left 0px
+
+.testimonial-container
+    display: flex
+    flex-flow: column
+    align-items: center
+    width: 100%
+
+.testimonial-image
+    background-image: url('../images/pattern-bg.svg')
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    width: 93.8%
+    margin: 1.4rem auto 1.9rem
+    
+    &__div
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        padding: 1.9rem 1.7rem 1.5rem
+
+    &__image
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        width: 16rem
+        height: 16rem
+        border-radius: .3rem   
+        background-repeat: no-repeat
+        background-size: contain 
+
+.switch
+    position: relative
+    top: 1rem
+    width: 3.5rem
+    list-style: none
+    border-radius: 1rem
+    background-color: white
+    box-shadow: 0 0.2rem 0.3rem hsla(240, 38%, 20%, 0.4)
+    cursor: pointer
+    
+    &__buttons
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 50%
+        height: 2rem
+
+        &--previous
+            border: none
+            border-radius: 1rem 0 0 1rem
+            
+        &--next
+            border: none
+            border-radius: 0 1rem 1rem 0
+    
+    &__icons
+        width: 30%
+
+.testimonial-text
+    background-image: url('../images/pattern-quotes.svg')
+    background-size: 15.5%
+    background-position-x: center
+    background-repeat: no-repeat
+    text-align: center
+    display: flex
+    flex-flow: column
+    align-items: center
+    padding-top: 1.45rem
+    &__quote
+        width: 88%
+        color: $dark-blue
+        font-size: 1.134rem
+        word-spacing: -0.02rem
+        line-height: 1.52rem
+        font-weight: 300
+        margin-bottom: 1.3rem
+    &__attribution
+        color: $dark-blue
+        font-size: 0.94rem
+    &__job-title
+        color: $grayish-blue
+        font-weight: 400
+        display: block
+        margin-top: 0.08rem
+
+.attribution 
+    font-size: 11px 
+    text-align: center
+ 
+    & a  
+        color: hsl(228, 45%, 44%)
+
