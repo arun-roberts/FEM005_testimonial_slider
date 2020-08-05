@@ -76,18 +76,18 @@
   border-radius: .3rem;
   background-repeat: no-repeat;
   background-size: contain;
+  -webkit-box-shadow: 0 2rem 1.5rem -1rem rgba(32, 32, 70, 0.2);
+          box-shadow: 0 2rem 1.5rem -1rem rgba(32, 32, 70, 0.2);
 }
 
 .switch {
   position: relative;
   top: 1rem;
-  width: 3.5rem;
+  width: 5rem;
   list-style: none;
   border-radius: 1rem;
-  background-color: white;
-  -webkit-box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
-          box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
-  cursor: pointer;
+  -webkit-box-shadow: 0 1rem 2rem rgba(32, 32, 70, 0.2);
+          box-shadow: 0 1rem 2rem rgba(32, 32, 70, 0.2);
 }
 
 .switch__buttons {
@@ -101,7 +101,9 @@
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
-  height: 2rem;
+  height: 2.5rem;
+  cursor: pointer;
+  background-color: white;
 }
 
 .switch__buttons--previous {
@@ -115,7 +117,7 @@
 }
 
 .switch__icons {
-  width: 30%;
+  width: 25%;
 }
 
 .testimonial-text {
@@ -150,6 +152,8 @@
 .testimonial-text__attribution {
   color: #202046;
   font-size: 0.94rem;
+  -webkit-font-kerning: none;
+          font-kerning: none;
 }
 
 .testimonial-text__job-title {
@@ -166,5 +170,85 @@
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media screen and (min-width: 900px) {
+  #root {
+    background-size: 40%;
+    background-position: bottom 0px left 0px;
+  }
+  .testimonial-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .testimonial-image {
+    width: 48.5%;
+    margin: 0;
+    padding: 0;
+    padding: 4rem;
+  }
+  .testimonial-image__image {
+    width: 34rem;
+    height: 34rem;
+  }
+  .switch {
+    top: 1rem;
+    right: 9.5rem;
+    width: 7rem;
+    list-style: none;
+    border-radius: 1rem;
+    background-color: white;
+    -webkit-box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
+            box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
+  }
+  .switch__buttons {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    height: 2rem;
+    cursor: pointer;
+  }
+  .switch__buttons--previous {
+    border: none;
+    border-radius: 1rem 0 0 1rem;
+  }
+  .switch__buttons--next {
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+  }
+  .switch__icons {
+    width: 30%;
+  }
+  .testimonial-text {
+    width: 35%;
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .testimonial-text__quote {
+    width: 150%;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.3rem;
+  }
+  .testimonial-text__job-title {
+    display: inline;
+  }
 }
 /*# sourceMappingURL=App.css.map */

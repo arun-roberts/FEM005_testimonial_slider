@@ -1,5 +1,6 @@
 $dark-blue: hsl(240, 38%, 20%)
 $grayish-blue: hsl(240, 18%, 77%)
+$desktop: 900px
 
 * 
     box-sizing: border-box
@@ -49,23 +50,25 @@ $grayish-blue: hsl(240, 18%, 77%)
         border-radius: .3rem   
         background-repeat: no-repeat
         background-size: contain 
+        box-shadow: 0 2rem 1.5rem -1rem hsla(240, 38%, 20%, 0.2)
 
 .switch
     position: relative
     top: 1rem
-    width: 3.5rem
+    width: 5rem
     list-style: none
     border-radius: 1rem
-    background-color: white
-    box-shadow: 0 0.2rem 0.3rem hsla(240, 38%, 20%, 0.4)
-    cursor: pointer
+    box-shadow: 0 1rem 2rem hsla(240, 38%, 20%, 0.2)
     
     &__buttons
         display: inline-flex
         justify-content: center
         align-items: center
         width: 50%
-        height: 2rem
+        height: 2.5rem
+        cursor: pointer
+        background-color: white 
+        
 
         &--previous
             border: none
@@ -76,7 +79,7 @@ $grayish-blue: hsl(240, 18%, 77%)
             border-radius: 0 1rem 1rem 0
     
     &__icons
-        width: 30%
+        width: 25%
 
 .testimonial-text
     background-image: url('../images/pattern-quotes.svg')
@@ -88,6 +91,7 @@ $grayish-blue: hsl(240, 18%, 77%)
     flex-flow: column
     align-items: center
     padding-top: 1.45rem
+
     &__quote
         width: 88%
         color: $dark-blue
@@ -96,9 +100,12 @@ $grayish-blue: hsl(240, 18%, 77%)
         line-height: 1.52rem
         font-weight: 300
         margin-bottom: 1.3rem
+
     &__attribution
         color: $dark-blue
         font-size: 0.94rem
+        font-kerning: none
+
     &__job-title
         color: $grayish-blue
         font-weight: 400
@@ -112,3 +119,67 @@ $grayish-blue: hsl(240, 18%, 77%)
     & a  
         color: hsl(228, 45%, 44%)
 
+@media screen and (min-width: $desktop) 
+    #root 
+        background-size: 40%
+        background-position: bottom 0px left 0px
+
+    .testimonial-container
+        flex-flow: row-reverse
+        justify-content: center
+        align-items: center
+    
+    .testimonial-image
+        width: 48.5%
+        margin: 0
+        padding: 0
+        
+        &__div
+        padding: 4rem
+        
+        &__image
+            width: 34rem
+            height: 34rem
+
+    .switch
+        top: 1rem
+        right: 9.5rem
+        width: 7rem
+        list-style: none
+        border-radius: 1rem
+        background-color: white
+        box-shadow: 0 0.2rem 0.3rem hsla(240, 38%, 20%, 0.4)
+        
+        &__buttons
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            width: 50%
+            height: 2rem
+            cursor: pointer
+
+            &--previous
+                border: none
+                border-radius: 1rem 0 0 1rem
+                
+            &--next
+                border: none
+                border-radius: 0 1rem 1rem 0
+        
+        &__icons
+            width: 30%
+
+
+    .testimonial-text
+        width: 35%
+        text-align: left
+        align-items: start
+        
+        &__quote
+            width: 150%
+            font-size: 2rem
+            font-weight: 300
+            line-height: 2.3rem
+
+        &__job-title
+            display: inline
