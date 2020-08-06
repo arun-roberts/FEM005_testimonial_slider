@@ -1,7 +1,8 @@
 $dark-blue: hsl(240, 38%, 20%)
+$dark-blue-shadow: hsla(240, 55%, 30%, 0.18)
 $grayish-blue: hsl(240, 18%, 77%)
-$grayish-blue-shadow: hsla(240, 18%, 77%, 0.6)  
-$desktop: 900px
+$tablet: 750px
+$desktop: 1200px
 
 * 
     box-sizing: border-box
@@ -40,7 +41,7 @@ $desktop: 900px
         flex-flow: column
         align-items: center
         justify-content: center
-        padding: 1.9rem 1.7rem 1.5rem
+        padding: 1.85rem 1.7rem 1.55rem
 
     &__image
         display: flex
@@ -50,8 +51,8 @@ $desktop: 900px
         height: 16rem
         border-radius: .3rem   
         background-repeat: no-repeat
-        background-size: contain 
-        box-shadow: 0 2rem 1.8rem -1rem $grayish-blue-shadow, 0 2.8rem 2.8rem -1.6rem $grayish-blue-shadow
+        background-size: cover
+        box-shadow: 0 1.5rem 2rem -1rem $dark-blue-shadow, 0 2.8rem 2.8rem -1.6rem $dark-blue-shadow
 
 .switch
     position: relative
@@ -59,8 +60,8 @@ $desktop: 900px
     width: 5rem
     list-style: none
     background-color: white
-    border-radius: 5rem
-    box-shadow: 0 1rem 2rem $grayish-blue-shadow
+    border-radius: 50%
+    box-shadow: 0 1rem 2rem $dark-blue-shadow
     
     &__buttons
         display: inline-flex
@@ -70,7 +71,9 @@ $desktop: 900px
         height: 2.48rem
         cursor: pointer
         background-color: white 
-        
+
+        &:hover
+            background: linear-gradient(315deg, rgb(55, 0, 128), rgb(123, 100, 205), rgb(190, 180, 230), rgb(208, 208, 250))
 
         &--previous
             border: none
@@ -122,7 +125,7 @@ $desktop: 900px
     & a  
         color: hsl(228, 45%, 44%)
 
-@media screen and (min-width: $desktop) 
+@media screen and (min-width: $tablet) 
     #root 
         background-size: 40%
         background-position: bottom 0px left 0px
@@ -133,23 +136,15 @@ $desktop: 900px
         align-items: center
     
     .testimonial-image
-        width: 48.5%
+        width: 23.65rem
         margin: 0
         padding: 0
-        
-        &__div
-        padding: 4rem
-        
-        &__image
-            width: 34rem
-            height: 34rem
 
     .switch
         top: 1rem
         right: 9.5rem
         width: 7rem
         list-style: none
-        border-radius: 1rem
         background-color: white
         box-shadow: 0 0.2rem 0.3rem hsla(240, 38%, 20%, 0.4)
         
@@ -159,30 +154,89 @@ $desktop: 900px
             align-items: center
             width: 50%
             height: 2rem
-            cursor: pointer
-
-            &--previous
-                border: none
-                border-radius: 1rem 0 0 1rem
-                
-            &--next
-                border: none
-                border-radius: 0 1rem 1rem 0
-        
+            
         &__icons
             width: 30%
 
 
     .testimonial-text
-        width: 35%
+        width: 25%
         text-align: left
         align-items: start
         
         &__quote
             width: 150%
-            font-size: 2rem
+            font-size: 1.5rem
             font-weight: 300
-            line-height: 2.3rem
+            line-height: 2.1rem
 
         &__job-title
             display: inline
+
+@media screen and (min-width: $desktop) 
+    .testimonial-container
+        flex-flow: row-reverse
+        justify-content: space-evenly
+        align-items: center
+        padding-top: 1.2rem
+        
+    .testimonial-image
+        width: 43.65rem
+        margin: 0
+        padding: 0
+        
+        &__div
+            padding: 4.3rem 4.7rem 3.7rem 3.3rem
+            
+        &__image
+            width: 33.7rem
+            height: 33.75rem
+
+    .switch
+        top: 1.7rem
+        right: 9.56rem
+        width: 6.8rem
+        box-shadow: 0 1rem 2rem $dark-blue-shadow
+        
+        &__buttons
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            width: 50%
+            height: 3.44rem
+            cursor: pointer
+            background-color: white 
+
+        &__icons
+            width: 25%
+
+    .testimonial-text
+        width: 36.2%
+        text-align: left
+        align-items: start
+        padding-left: 5.72rem
+        background-size: 23%
+        padding-top: 4.1rem
+        background-position-x: 46.5%
+
+        &__quote
+            width: 150%
+            font-size: 1.98rem
+            font-weight: 300
+            line-height: 2.751rem
+            letter-spacing: 0.01rem
+            margin-bottom: 2.38rem
+
+        &__attribution
+            font-size: 1.238rem
+            letter-spacing: -0.005rem
+            word-spacing: 0.018rem
+
+        &__job-title
+            display: inline
+            margin-left: 0.255rem
+
+
+// ===================================================================================
+//                                 SWITCH STYLES
+// ===================================================================================

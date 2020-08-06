@@ -58,7 +58,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 1.9rem 1.7rem 1.5rem;
+  padding: 1.85rem 1.7rem 1.55rem;
 }
 
 .testimonial-image__image {
@@ -75,9 +75,9 @@
   height: 16rem;
   border-radius: .3rem;
   background-repeat: no-repeat;
-  background-size: contain;
-  -webkit-box-shadow: 0 2rem 1.8rem -1rem rgba(186, 186, 207, 0.6), 0 2.8rem 2.8rem -1.6rem rgba(186, 186, 207, 0.6);
-          box-shadow: 0 2rem 1.8rem -1rem rgba(186, 186, 207, 0.6), 0 2.8rem 2.8rem -1.6rem rgba(186, 186, 207, 0.6);
+  background-size: cover;
+  -webkit-box-shadow: 0 1.5rem 2rem -1rem rgba(34, 34, 119, 0.18), 0 2.8rem 2.8rem -1.6rem rgba(34, 34, 119, 0.18);
+          box-shadow: 0 1.5rem 2rem -1rem rgba(34, 34, 119, 0.18), 0 2.8rem 2.8rem -1.6rem rgba(34, 34, 119, 0.18);
 }
 
 .switch {
@@ -86,9 +86,9 @@
   width: 5rem;
   list-style: none;
   background-color: white;
-  border-radius: 5rem;
-  -webkit-box-shadow: 0 1rem 2rem rgba(186, 186, 207, 0.6);
-          box-shadow: 0 1rem 2rem rgba(186, 186, 207, 0.6);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1rem 2rem rgba(34, 34, 119, 0.18);
+          box-shadow: 0 1rem 2rem rgba(34, 34, 119, 0.18);
 }
 
 .switch__buttons {
@@ -105,6 +105,10 @@
   height: 2.48rem;
   cursor: pointer;
   background-color: white;
+}
+
+.switch__buttons:hover {
+  background: linear-gradient(315deg, #370080, #7b64cd, #beb4e6, #d0d0fa);
 }
 
 .switch__buttons--previous {
@@ -174,7 +178,7 @@
   color: #3e52a3;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 750px) {
   #root {
     background-size: 40%;
     background-position: bottom 0px left 0px;
@@ -192,21 +196,15 @@
             align-items: center;
   }
   .testimonial-image {
-    width: 48.5%;
+    width: 23.65rem;
     margin: 0;
     padding: 0;
-    padding: 4rem;
-  }
-  .testimonial-image__image {
-    width: 34rem;
-    height: 34rem;
   }
   .switch {
     top: 1rem;
     right: 9.5rem;
     width: 7rem;
     list-style: none;
-    border-radius: 1rem;
     background-color: white;
     -webkit-box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
             box-shadow: 0 0.2rem 0.3rem rgba(32, 32, 70, 0.4);
@@ -223,21 +221,12 @@
             align-items: center;
     width: 50%;
     height: 2rem;
-    cursor: pointer;
-  }
-  .switch__buttons--previous {
-    border: none;
-    border-radius: 1rem 0 0 1rem;
-  }
-  .switch__buttons--next {
-    border: none;
-    border-radius: 0 1rem 1rem 0;
   }
   .switch__icons {
     width: 30%;
   }
   .testimonial-text {
-    width: 35%;
+    width: 25%;
     text-align: left;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -245,12 +234,93 @@
   }
   .testimonial-text__quote {
     width: 150%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
-    line-height: 2.3rem;
+    line-height: 2.1rem;
   }
   .testimonial-text__job-title {
     display: inline;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .testimonial-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 1.2rem;
+  }
+  .testimonial-image {
+    width: 43.65rem;
+    margin: 0;
+    padding: 0;
+  }
+  .testimonial-image__div {
+    padding: 4.3rem 4.7rem 3.7rem 3.3rem;
+  }
+  .testimonial-image__image {
+    width: 33.7rem;
+    height: 33.75rem;
+  }
+  .switch {
+    top: 1.7rem;
+    right: 9.56rem;
+    width: 6.8rem;
+    -webkit-box-shadow: 0 1rem 2rem rgba(34, 34, 119, 0.18);
+            box-shadow: 0 1rem 2rem rgba(34, 34, 119, 0.18);
+  }
+  .switch__buttons {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    height: 3.44rem;
+    cursor: pointer;
+    background-color: white;
+  }
+  .switch__icons {
+    width: 25%;
+  }
+  .testimonial-text {
+    width: 36.2%;
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding-left: 5.72rem;
+    background-size: 23%;
+    padding-top: 4.1rem;
+    background-position-x: 46.5%;
+  }
+  .testimonial-text__quote {
+    width: 150%;
+    font-size: 1.98rem;
+    font-weight: 300;
+    line-height: 2.751rem;
+    letter-spacing: 0.01rem;
+    margin-bottom: 2.38rem;
+  }
+  .testimonial-text__attribution {
+    font-size: 1.238rem;
+    letter-spacing: -0.005rem;
+    word-spacing: 0.018rem;
+  }
+  .testimonial-text__job-title {
+    display: inline;
+    margin-left: 0.255rem;
   }
 }
 /*# sourceMappingURL=App.css.map */
