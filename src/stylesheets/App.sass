@@ -1,5 +1,6 @@
 $dark-blue: hsl(240, 38%, 20%)
 $grayish-blue: hsl(240, 18%, 77%)
+$grayish-blue-shadow: hsla(240, 18%, 77%, 0.6)  
 $desktop: 900px
 
 * 
@@ -32,7 +33,7 @@ $desktop: 900px
     background-size: contain
     background-position: center
     width: 93.8%
-    margin: 1.4rem auto 1.9rem
+    margin: 1.45rem auto 2.1rem
     
     &__div
         display: flex
@@ -50,61 +51,63 @@ $desktop: 900px
         border-radius: .3rem   
         background-repeat: no-repeat
         background-size: contain 
-        box-shadow: 0 2rem 1.5rem -1rem hsla(240, 38%, 20%, 0.2)
+        box-shadow: 0 2rem 1.8rem -1rem $grayish-blue-shadow, 0 2.8rem 2.8rem -1.6rem $grayish-blue-shadow
 
 .switch
     position: relative
-    top: 1rem
+    top: 1.22rem
     width: 5rem
     list-style: none
-    border-radius: 1rem
-    box-shadow: 0 1rem 2rem hsla(240, 38%, 20%, 0.2)
+    background-color: white
+    border-radius: 5rem
+    box-shadow: 0 1rem 2rem $grayish-blue-shadow
     
     &__buttons
         display: inline-flex
         justify-content: center
         align-items: center
         width: 50%
-        height: 2.5rem
+        height: 2.48rem
         cursor: pointer
         background-color: white 
         
 
         &--previous
             border: none
-            border-radius: 1rem 0 0 1rem
+            border-radius: 50% 0 0 50%
             
         &--next
             border: none
-            border-radius: 0 1rem 1rem 0
+            border-radius: 0 50% 50% 0
     
     &__icons
-        width: 25%
+        width: 24%
 
 .testimonial-text
     background-image: url('../images/pattern-quotes.svg')
-    background-size: 15.5%
+    background-size: 15.7%
     background-position-x: center
     background-repeat: no-repeat
     text-align: center
+    font-kerning: none
     display: flex
     flex-flow: column
     align-items: center
-    padding-top: 1.45rem
+    padding-top: 1.5rem
 
     &__quote
-        width: 88%
+        width: 83%
         color: $dark-blue
-        font-size: 1.134rem
-        word-spacing: -0.02rem
-        line-height: 1.52rem
+        font-size: 1.13rem
+        word-spacing: -0.01rem
+        line-height: 1.5625rem
         font-weight: 300
-        margin-bottom: 1.3rem
+        margin-bottom: 1.15rem
 
     &__attribution
         color: $dark-blue
-        font-size: 0.94rem
-        font-kerning: none
+        font-size: 0.935rem
+        word-spacing: -0.01rem
 
     &__job-title
         color: $grayish-blue
