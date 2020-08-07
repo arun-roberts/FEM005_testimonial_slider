@@ -1,8 +1,41 @@
 $dark-blue: hsl(240, 38%, 20%)
 $dark-blue-shadow: hsla(240, 55%, 30%, 0.18)
 $grayish-blue: hsl(240, 18%, 77%)
-$tablet: 750px
+$tablet: 700px
+$small-desktop: 900px
 $desktop: 1200px
+
+@mixin switch-style($top, $width, $icon) 
+    position: relative
+    top: $top
+    width: $width
+    list-style: none
+    background-color: white
+    border-radius: 50%
+    box-shadow: 0 1rem 2rem $dark-blue-shadow
+    
+    &__buttons
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 50%
+        height: $width / 2
+        cursor: pointer
+        background-color: white 
+
+        &:hover
+            background: linear-gradient(315deg, rgb(55, 0, 128), rgb(123, 100, 205), rgb(190, 180, 230), rgb(208, 208, 250))
+
+        &--previous
+            border: none
+            border-radius: 50% 0 0 50%
+            
+        &--next
+            border: none
+            border-radius: 0 50% 50% 0
+    
+    &__icons
+        width: $icon
 
 * 
     box-sizing: border-box
@@ -11,11 +44,7 @@ $desktop: 1200px
     margin: 0
 
 #root 
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
+    min-height: 100vh
     display: flex
     background-image: url('../images/pattern-curve.svg')
     background-repeat: no-repeat
@@ -53,38 +82,10 @@ $desktop: 1200px
         background-repeat: no-repeat
         background-size: cover
         box-shadow: 0 1.5rem 2rem -1rem $dark-blue-shadow, 0 2.8rem 2.8rem -1.6rem $dark-blue-shadow
-
-.switch
-    position: relative
-    top: 1.22rem
-    width: 5rem
-    list-style: none
-    background-color: white
-    border-radius: 50%
-    box-shadow: 0 1rem 2rem $dark-blue-shadow
+        transition: background-image 0.4s ease-in
     
-    &__buttons
-        display: inline-flex
-        justify-content: center
-        align-items: center
-        width: 50%
-        height: 2.48rem
-        cursor: pointer
-        background-color: white 
-
-        &:hover
-            background: linear-gradient(315deg, rgb(55, 0, 128), rgb(123, 100, 205), rgb(190, 180, 230), rgb(208, 208, 250))
-
-        &--previous
-            border: none
-            border-radius: 50% 0 0 50%
-            
-        &--next
-            border: none
-            border-radius: 0 50% 50% 0
-    
-    &__icons
-        width: 24%
+.switch 
+    @include switch-style(1.22rem, 5rem, 24%)
 
 .testimonial-text
     background-image: url('../images/pattern-quotes.svg')
@@ -125,118 +126,93 @@ $desktop: 1200px
     & a  
         color: hsl(228, 45%, 44%)
 
-@media screen and (min-width: $tablet) 
+@media screen and (min-width: $tablet)
+    .testimonial-container
+        justify-content: space-evenly
+
+    .testimonial-image
+        width: 32rem
+        margin: 0
+
+        &__div 
+            padding: 2.5rem
+
+        &__image
+            width: 22rem
+            height: 22rem
+
+    .testimonial-text
+        padding-top: 4.5rem
+
+        &__quote
+            width: 70%
+            font-size: 1.2rem
+            font-weight: 300
+            line-height: 1.8rem
+
+@media screen and (min-width: $small-desktop) 
     #root 
         background-size: 40%
-        background-position: bottom 0px left 0px
 
     .testimonial-container
         flex-flow: row-reverse
-        justify-content: center
-        align-items: center
-    
-    .testimonial-image
-        width: 23.65rem
-        margin: 0
-        padding: 0
 
     .switch
-        top: 1rem
-        right: 9.5rem
-        width: 7rem
-        list-style: none
-        background-color: white
-        box-shadow: 0 0.2rem 0.3rem hsla(240, 38%, 20%, 0.4)
-        
-        &__buttons
-            display: inline-flex
-            justify-content: center
-            align-items: center
-            width: 50%
-            height: 2rem
-            
-        &__icons
-            width: 30%
-
+        @include switch-style(1rem, 5rem, 30%)
+        right: 6.5rem
 
     .testimonial-text
         width: 25%
         text-align: left
         align-items: start
+        background-size: 33%
+        padding: 2.7rem 0 0 3rem
         
         &__quote
-            width: 150%
+            width: 200%
             font-size: 1.5rem
-            font-weight: 300
             line-height: 2.1rem
 
         &__job-title
-            display: inline
+            display: inline-block
+            margin-left: 0.255rem
 
 @media screen and (min-width: $desktop) 
+    #root
+        background-size: 42%
+
     .testimonial-container
-        flex-flow: row-reverse
-        justify-content: space-evenly
-        align-items: center
-        padding-top: 1.2rem
+        padding: 2.85rem 0 5.4rem 
         
     .testimonial-image
         width: 43.65rem
-        margin: 0
-        padding: 0
         
         &__div
-            padding: 4.3rem 4.7rem 3.7rem 3.3rem
+            padding: 4.2rem 4.75rem 3.8rem 3.25rem
             
         &__image
             width: 33.7rem
             height: 33.75rem
 
     .switch
-        top: 1.7rem
+        @include switch-style(1.75rem, 6.96rem, 25%)
         right: 9.56rem
-        width: 6.8rem
-        box-shadow: 0 1rem 2rem $dark-blue-shadow
-        
-        &__buttons
-            display: inline-flex
-            justify-content: center
-            align-items: center
-            width: 50%
-            height: 3.44rem
-            cursor: pointer
-            background-color: white 
-
-        &__icons
-            width: 25%
 
     .testimonial-text
         width: 36.2%
-        text-align: left
-        align-items: start
-        padding-left: 5.72rem
         background-size: 23%
-        padding-top: 4.1rem
         background-position-x: 46.5%
+        padding: 4.1rem 0 0 5.72rem
+        margin-top: 0.9rem
 
         &__quote
             width: 150%
             font-size: 1.98rem
-            font-weight: 300
             line-height: 2.751rem
             letter-spacing: 0.01rem
-            margin-bottom: 2.38rem
+            margin-bottom: 2.365rem
 
         &__attribution
             font-size: 1.238rem
             letter-spacing: -0.005rem
             word-spacing: 0.018rem
-
-        &__job-title
-            display: inline
-            margin-left: 0.255rem
-
-
-// ===================================================================================
-//                                 SWITCH STYLES
-// ===================================================================================
